@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api\Auth;
 
+use App\Actions\Auth\RegisterAction;
 use App\Events\UserRegistered;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\RegisterRequest;
@@ -9,6 +10,11 @@ use App\Models\User;
 
 class RegisterController extends Controller
 {
+    public function __construct(protected RegisterAction $action)
+    {
+        //
+    }
+
     /**
      * Show the form for creating a new resource.
      */
@@ -22,10 +28,12 @@ class RegisterController extends Controller
      */
     public function store(RegisterRequest $request)
     {
-        $user = User::create($request->validated());
+        $user = new User($request->validated());
 
-        UserRegistered::dispatch($user);
+        $this->action->handle($user);
 
-        redirect('/');
+        return response()->json([
+            'message' => 'Registration successful'
+        ]);
     }
 }
