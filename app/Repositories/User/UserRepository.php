@@ -13,4 +13,11 @@ interface UserRepository
      * @return User
      */
     public function create(User $user): Model;
+
+    /**
+     * @param int $id
+     *
+     * @return Model
+     */
+    public function find(int $id): Model;
 }
