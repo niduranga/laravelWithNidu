@@ -7,9 +7,11 @@ use App\Mail\WelcomeMail;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\Attributes\Queue;
+use Illuminate\Queue\Attributes\Delay;
 use Illuminate\Support\Facades\Mail;
 
 #[Queue('high')]
+#[Delay(900)]
 class SendWelcomeEmail implements ShouldQueue
 {
     use Queueable;

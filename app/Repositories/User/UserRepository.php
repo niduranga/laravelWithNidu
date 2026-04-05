@@ -9,6 +9,7 @@ interface UserRepository
 {
     /**
      * @param User $user
+     *
      * @return User
      */
     public function create(User $user): Model;
