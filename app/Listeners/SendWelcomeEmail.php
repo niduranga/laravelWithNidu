@@ -6,12 +6,10 @@ use App\Events\UserRegistered;
 use App\Mail\WelcomeMail;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Queue\Attributes\Delay;
 use Illuminate\Queue\Attributes\Queue;
 use Illuminate\Support\Facades\Mail;
 
 #[Queue('high')]
-#[Delay(60)]
 class SendWelcomeEmail implements ShouldQueue
 {
     use Queueable;
