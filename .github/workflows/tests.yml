@@ -26,6 +26,5 @@ jobs:
 
       - name: Execute tests
         env:
-          DB_CONNECTION: sqlite
-          DB_DATABASE: ":memory:"
+          JWT_SECRET: ${{ secrets.JWT_SECRET }}
         run: vendor/bin/phpunit
