@@ -17,7 +17,7 @@ class Refresh
 
         return response()->json([
             'access_token' => $newToken,
-            'token_type'   => 'bearer'
+            'token_type'   => 'bearer',
         ]);
     }
 }

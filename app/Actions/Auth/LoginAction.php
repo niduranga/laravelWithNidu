@@ -17,7 +17,7 @@ class LoginAction
     {
         $credentials = [
             'email'    => $attributes['email'],
-            'password' => $attributes['password']
+            'password' => $attributes['password'],
         ];
 
         if (!$token = Auth::guard('api')->attempt($credentials)) {
