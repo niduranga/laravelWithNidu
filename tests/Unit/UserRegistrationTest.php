@@ -93,5 +93,4 @@ class UserRegistrationTest extends TestCase
             return $event->user === $userData;
         });
     }
-
 }

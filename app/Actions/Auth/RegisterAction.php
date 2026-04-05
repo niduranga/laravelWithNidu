@@ -3,7 +3,6 @@
 namespace App\Actions\Auth;
 
 use App\Events\UserRegistered;
-use App\Http\Requests\RegisterRequest;
 use App\Models\User;
 use App\Repositories\User\UserRepository;
 
@@ -20,6 +19,7 @@ class RegisterAction
     {
         $user = $this->userRepository->create($user);
         UserRegistered::dispatch($user);
+
         return $user;
     }
 }
