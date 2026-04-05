@@ -40,7 +40,7 @@ class UserRegistrationTest extends TestCase
         $delayAttr = $reflection->getAttributes(\Illuminate\Queue\Attributes\Delay::class)[0];
 
         $this->assertEquals('high', $queueAttr->getArguments()[0]);
-        $this->assertEquals(60, $delayAttr->getArguments()[0]);
+        $this->assertEquals(900, $delayAttr->getArguments()[0]);
     }
 
     public function test_it_sends_welcome_email(): void

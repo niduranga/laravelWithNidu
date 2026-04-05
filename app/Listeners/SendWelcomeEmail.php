@@ -11,7 +11,7 @@ use Illuminate\Queue\Attributes\Queue;
 use Illuminate\Support\Facades\Mail;
 
 #[Queue('high')]
-#[Delay(60)]
+#[Delay(900)]
 class SendWelcomeEmail implements ShouldQueue
 {
     use Queueable;
