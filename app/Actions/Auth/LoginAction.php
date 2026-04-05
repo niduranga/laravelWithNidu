@@ -16,7 +16,7 @@ class LoginAction
     public function handle(array $attributes): false|array
     {
         $credentials = [
-            'email' => $attributes['email'],
+            'email'    => $attributes['email'],
             'password' => $attributes['password']
         ];
 

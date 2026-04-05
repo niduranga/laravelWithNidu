@@ -28,12 +28,12 @@ class LoginActionTest extends TestCase
         $password = 'password123';
 
         User::factory()->create([
-            'email' => 'test@example.com',
+            'email'    => 'test@example.com',
             'password' => bcrypt($password),
         ]);
 
         $attributes = [
-            'email' => 'test@example.com',
+            'email'    => 'test@example.com',
             'password' => $password,
         ];
 
@@ -49,12 +49,12 @@ class LoginActionTest extends TestCase
     public function test_it_returns_false_on_failed_login()
     {
         User::factory()->create([
-            'email' => 'wrong@example.com',
+            'email'    => 'wrong@example.com',
             'password' => bcrypt('correct_password'),
         ]);
 
         $attributes = [
-            'email' => 'wrong@example.com',
+            'email'    => 'wrong@example.com',
             'password' => 'incorrect_password',
         ];
 

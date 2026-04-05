@@ -26,7 +26,7 @@ class RefreshActionTest extends TestCase
         $user = User::factory()->create();
         $token = Auth::guard('api')->login($user);
 
-        $this->withHeader('Authorization', 'Bearer ' . $token);
+        $this->withHeader('Authorization', 'Bearer '.$token);
 
         $response = $this->refreshAction->refresh();
 

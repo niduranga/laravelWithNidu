@@ -16,13 +16,13 @@ class LoginController extends Controller
 
         if (!$data) {
             return response()->json([
-                'message' => 'Invalid email or password.'
+                'message' => 'Invalid email or password.',
             ], 401);
         }
 
         return response()->json([
             'message' => 'Logged in successfully.',
-            'data' => $data,
+            'data'    => $data,
         ]);
     }
 
