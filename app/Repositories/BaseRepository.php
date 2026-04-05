@@ -28,6 +28,7 @@ abstract class BaseRepository
     {
         $recode = $this->model->find($id);
         $recode->update($attributes->getAttributes());
+
         return $recode;
     }
 
